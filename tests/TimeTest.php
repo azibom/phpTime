@@ -26,6 +26,7 @@ require_once __DIR__.'/../vendor/autoload.php';
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     http://localhost/
  */
+
 class TimeTest extends TestCase
 {
     /**
