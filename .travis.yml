@@ -1,16 +1,10 @@
 language: php
-
-# Define the php versions against we want to test our code
-php:
-- 7.3
-
-before_script:
-    - travis_retry composer self-update
-    - travis_retry composer install --no-interaction --prefer-source --dev
-
+php: 
+  - '7.3'
+install: composer update
 script:
-    - vendor/bin/phpunit --coverage-clover=coverage.xml
-
+  - $TRAVIS_BUILD_DIR/vendor/bin/phpunit $TRAVIS_BUILD_DIR/tests/
+  - $TRAVIS_BUILD_DIR/vendor/bin/phpunit --coverage-clover=coverage.xml $TRAVIS_BUILD_DIR/tests/
 after_success:
     - bash <(curl -s https://codecov.io/bash)
 
