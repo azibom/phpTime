@@ -4,24 +4,16 @@ language: php
 php:
 - 7.3
 
-# Note: Code coverage requires php-xDebug extension enabled on CI server
+before_script:
+    - travis_retry composer self-update
+    - travis_retry composer install --no-interaction --prefer-source --dev
 
-install:
-- travis_retry composer install --no-interaction --no-suggest
-
-# Testing the app (see phpunit.xml) for configs, generating Code Coverage report
 script:
-- composer test -- --coverage-clover=coverage.xml
-
-#after_script:
+    - vendor/bin/phpunit --coverage-clover=coverage.xml
 
 after_success:
-# Submit coverage report to https://codecov.io
-- bash <(curl -s https://codecov.io/bash)
+    - bash <(curl -s https://codecov.io/bash)
 
-#after_failure:
-
-# Monitor only these branches
 branches:
   only:
   - master
