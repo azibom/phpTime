@@ -1,0 +1,23 @@
+{
+    "name": "azibom/time",
+    "description": "This package can help you to work with time easily",
+    "type": "library",
+    "authors": [
+        {
+            "name": "cshabanic",
+            "email": "mrsh13610@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "azibom\\PhpTime\\": "src/"
+        }
+    },
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^9"
+    },
+    "scripts": {
+        "test": "./vendor/bin/phpunit tests"
+    }
+}
