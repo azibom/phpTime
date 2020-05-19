@@ -38,5 +38,8 @@ class TimeTest extends TestCase
     {   
         $time = (new DateTime())->format('H:i:s');
         $this->assertSame(Time::now(), $time);
+
+        $time = (new DateTime())->format('H:i:s');
+        $this->assertSame(Time::now(), $time);
     }
 }
