@@ -12,9 +12,11 @@
  * @link       https://github.com/azibom
  * @since      1.0.0
  */
-
 use PHPUnit\Framework\TestCase;
 use azibom\PhpTime\Time;
+
+require_once __DIR__.'/../vendor/autoload.php';
+
 /**
  * TimeTest Class
  *
